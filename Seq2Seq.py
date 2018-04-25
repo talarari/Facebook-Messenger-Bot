@@ -229,7 +229,7 @@ for i in range(numIterations):
 	curLoss, _, pred = sess.run([loss, optimizer, decoderPrediction], feed_dict=feedDict)
 	
 	if (i % 50 == 0):
-		print('Current loss:', curLoss, 'at iteration', i)
+		print('Current loss:', curLoss, 'at iteration', i, 'of:', numIterations)
 		summary = sess.run(merged, feed_dict=feedDict)
 		writer.add_summary(summary, i)
 	if (i % 25 == 0 and i != 0):
